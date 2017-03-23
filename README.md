@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <math.h>
+# include <stdio.h>
+# include <math.h>
 
 double myFunction (double x, double c1, double c2, double c3, double c4)
 {
