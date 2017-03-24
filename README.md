@@ -1,52 +1,27 @@
-# include <stdio.h>
-# include <math.h>
+## Synopsis
 
-double myFunction (double x, double c1, double c2, double c3, double c4)
-{
-  return(c1*x*x*x + c2*x*x + c3*x + c4);
-}
-int main()
-{
-  double c1,c2,c3,c4,x1,min,max,epsilon = 0.01,minpt,maxpt,x1pt;
+At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
 
-  printf("\n Finding the root using bisection method \n");
-  printf("\n Function is c1*(x^3)+c2*(x^2)+c3*(x^1)+c4 \n");
-  printf("\n Please enter the values of c1, c2, c3, c4 : \n");
-  scanf("%lf %lf %lf %lf",&c1, &c2, &c3, &c4);
-  printf("\n Please enter min and max values for function : \n");
-  scanf("%lf %lf",&min, &max);
+## Code Example
 
-  minpt=myFunction(min,c1,c2,c3,c4);
-  maxpt=myFunction(max,c1,c2,c3,c4);
+Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
-  if ( minpt*maxpt<0 )
-  {
-      x1=(min+max)/2;
-  }
-  else
-  {
-      printf("\n There is no root \n");
-      return;
-  }
+## Motivation
 
-  while ( (max-min)>epsilon )
-  {
-      minpt=myFunction(min,c1,c2,c3,c4);
-      maxpt=myFunction(max,c1,c2,c3,c4);
+A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
 
-      x1=(max+min)/2;
-      x1pt=myFunction(x1,c1,c2,c3,c4);
+## Installation
 
-      if ( x1pt*minpt<0 )
-      {
-          max=x1;
-      }
-      else
-      {
-          min=x1;
-      }
-  }
-   printf("\n The root of equation is :%lf \n",x1);
+Provide code examples and explanations of how to get the project.
 
-   return 0;
-}
+## API Reference
+
+Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+
+## Tests
+
+Describe and show how to run the tests with code examples.
+
+## Contributors
+
+Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
